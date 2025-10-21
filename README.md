@@ -5,11 +5,11 @@ Il permet de comprendre la différence entre le **passage par adresse** et le **
 Les classes principales (`Client`, `ClientRef`, `Compte`, `Date`) interagissent pour représenter un client, son compte et sa date de naissance.
 
 ## Fichiers:
-- | **Date.h / Date.cpp** | Définit la classe `Date` pour gérer la date de naissance. |
-- | **Compte.h / Compte.cpp** | Définit la classe `Compte` (numéro, solde, devise) avec les opérations `deposer()` et `retirer()`. |
-- | **Client.h / Client.cpp** | Définit la classe `Client` qui contient un pointeur vers un compte (passage par adresse). |
-- | **ClientRef.h / ClientRef.cpp** | Définit la classe `ClientRef` qui contient une référence vers un compte (passage par référence). |
-- | **ex_Client.cpp** | Programme principal : Exemple d'utilisation(création des objets, affichage et test des opérations). |
+- | **Date.h / Date.cpp** | Définit la classe `Date` pour gérer la date de naissance. 
+- | **Compte.h / Compte.cpp** | Définit la classe `Compte` (numéro, solde, devise) avec les opérations `deposer()` et `retirer()`. 
+- | **Client.h / Client.cpp** | Définit la classe `Client` qui contient un pointeur vers un compte (passage par adresse). 
+- | **ClientRef.h / ClientRef.cpp** | Définit la classe `ClientRef` qui contient une référence vers un compte (passage par référence). 
+- | **ex_Client.cpp** | Programme principal : Exemple d'utilisation(création des objets, affichage et test des opérations). 
 
 ## ⚙️ Fonctionnalités
 
