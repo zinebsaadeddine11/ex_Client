@@ -123,16 +123,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CEpargne.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientRef.cpp" />
     <ClCompile Include="Compte.cpp" />
+    <ClCompile Include="C_Courant.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="ex_Client.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CEpargne.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientRef.h" />
     <ClInclude Include="Compte.h" />
+    <ClInclude Include="C_Courant.h" />
     <ClInclude Include="Date.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

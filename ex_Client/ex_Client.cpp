@@ -4,39 +4,64 @@
 #include <iostream>
 #include"Client.h"
 #include"ClientRef.h"
-
+#include"C_Courant.h"
+#include"CEpargne.h"
 int main()
 {
     //creation du date
     Date d1(12,4,1998);
     Date d2(1, 4, 1985);
+    Date d3(25 ,10 , 2025);
     //creation du compte
-    Compte acc1("1452789", 10000, "MAD");
-    Compte* acc2 = new Compte("1324509", 2000, "MAD");
+    Compte acc1(10000, "MAD",&d3);
+    Compte* acc2 = new Compte( 2000, "MAD",&d3);
     //creation du client
-    Client c1("BERRADA", "SAMIR", "B234560",d1,&acc1);
-    Client* c2 = new Client("RAHIM", "SALMA", "D213409", d2,acc2);
+    Client c1=Client::creator("BERRADA", "SAMIR", "B234560",d1,&acc1);
+    Client c2=Client::creator("RAHIM", "SALMA", "D213409", d2,acc2);
+
     //affichage du client 
     cout << "****PASSAGE PAR ADRESSE****" << endl;
     c1.afficher();
-    c2->afficher();
+    c2.afficher();
+    cout << "\n\n";
     cout << "****PASSAGE PAR REFERENCE****" << endl;
     ClientRef cRef1("BERRADA", "SAMIR", "B234560", d1, acc1);
     ClientRef* cRef2 = new ClientRef("RAHIM", "SALMA", "D213409", d2, *acc2);
     cRef1.afficher();
     cRef2->afficher();
-    //operations compte
-    cout << "****PASSAGE PAR ADRESSE****" << endl;
-    acc1.deposer(200);
-    cout << "Apres depot:" << endl;
-    c1.afficher();
-    cout << "*****************" << endl;
-    cout << "****PASSAGE PAR REFERENCE****" << endl;
-    acc2->retirer(1000);
-    cout << "Apres retrait :" << endl;
-    cRef2->afficher();
+    ////operations compte
+    //cout << "****PASSAGE PAR ADRESSE****" << endl;
+    //acc1.deposer(200);
+    //cout << "Apres depot:" << endl;
+    //c1.afficher();
+    //cout << "*****************" << endl;
+    //cout << "****PASSAGE PAR REFERENCE****" << endl;
+    //acc2->retirer(1000);
+    //cout << "Apres retrait :" << endl;
+    //cRef2->afficher();
+    //cout << "\n\n";
+    cout << "\n\n";
+    cout << "********COMPTE COURANT*********" << endl;
+    C_Courant cc(3000,"MAD",&d3,10000);
+    cc.afficher();
+    cc.retirer(350);
+    cout << "\n\n";
+    cout << "Apres retrait:" << endl;
+    cc.afficher();
+    cout << "\n\n";
+    cout << "********COMPTE EPARGNE*********" << endl;
+    CEpargne ce(4000,"MAD",&d3,10);
+    ce.afficher();
+    ce.ajouterInteret();
+    cout << "\n\n";
+    cout << "Apres ajout interet:"<<endl;
+    ce.afficher();
+
+
+
+
+
     //destruction
-    delete c2;
     delete acc2;
     delete cRef2;
 }

@@ -8,14 +8,20 @@ using namespace std;
 class Client
 {
 private:
-	const string nom;
-	const string prenom;
-	const string CIN;
+	static int nbreinstance;
+	static int idcount;
+	int NumClient; // cle primaire 
+	 string nom;
+	 string prenom;
+	 string CIN;
 	Date DateNaissance;//passage par valeur
 	Compte* compte;//passage par adresse
+	Client(string, string, string, Date, Compte*);
 public:
-	Client(string, string, string,Date,Compte*);
+
 	void afficher() const;
+	static Client creator(string, string, string, Date, Compte*);
+	~Client();
 
 };
 

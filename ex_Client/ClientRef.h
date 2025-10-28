@@ -7,13 +7,17 @@ using namespace std;
 class ClientRef
 {
 private:
-	const string nom;
-	const string prenom;
-	const string CIN;
+	static int nbreinstance;
+	static int idcount;
+	int NumClient;
+	string nom;
+	string prenom;
+	string CIN;
 	Date DateNaissance;//passage par valeur
 	Compte& compte;//passage par référence
 public:
 	ClientRef(string, string, string, Date, Compte&);
 	void afficher() const;
+	~ClientRef();
 
 };
